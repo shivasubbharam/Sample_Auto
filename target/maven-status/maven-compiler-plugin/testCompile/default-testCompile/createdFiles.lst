@@ -1,0 +1,3 @@
+stepDefinitions\run.class
+Mob\Auto\Base.class
+CucumberOptions\TestRunner.class
