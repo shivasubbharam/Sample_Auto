@@ -19,14 +19,15 @@ public class Base {
 
 
 	public static AndroidDriver<AndroidElement> launch() {
+		//String currentUsersHomeDir = System.getProperty("user.dir");
+		File appDir=new File(System.getProperty("user.dir")+"\\src");
+		File app = new File(appDir,"ApiDemos-debug.apk");
 		
-		File file = new File("src\\test\\java\\ApiDemos-debug.apk");
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
 		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 		cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
-		cap.setCapability(MobileCapabilityType.APP, file.getAbsolutePath());
-		cap.setCapability("avd","N25");
+		cap.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 		// cap.setCapability("appPackage","io.appium.android.apis");
 		// cap.setCapability("appActivity","io.appium.android.apis.ApiDemos");
 		AndroidDriver<AndroidElement> driver = null;
